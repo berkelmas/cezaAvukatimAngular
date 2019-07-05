@@ -1,21 +1,1147 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="main-body">
+  <!-- header start -->
+  <header class="header">
+      <div class="header__top-area grey-bg">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6">
+                      <div class="header__top-menu top-menu-black">
+                          <ul>
+                              <li>
+                                  <a href="#">About </a>
+                              </li>
+                              <li>
+                                  <a href="#">Advertise</a>
+                              </li>
+                              <li>
+                                  <a href="#">Privacy & Policy</a>
+                              </li>
+                              <li>
+                                  <a href="#">Contact Us</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6">
+                      <div class="header__social header-social-black text-center text-md-right mt-10">
+                          <a href="#">
+                              <i class="fab fa-facebook-f"></i>
+                          </a>
+                          <a href="#">
+                              <i class="fab fa-twitter"></i>
+                          </a>
+                          <a href="#">
+                              <i class="fab fa-linkedin-in"></i>
+                          </a>
+                          <a href="#">
+                              <i class="fab fa-google-plus-g"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="header__middle pt-20">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-4 col-md-3 d-flex align-items-center justify-content-md-start justify-content-center">
+                      <div class="header__logo text-center text-md-left mb-20">
+                          <a href="index.html">
+                              <img src="assets/img/logo/logo.png" alt="Header Logo">
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-<router-outlet></router-outlet>
+      <div class="header__menu-area grey-bg">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-12">
+                      <div class="header__right-icon header__icon-black f-right mt-17">
+                          <a>
+
+                          </a>
+                          <a class="info-bar">
+
+                          </a>
+                      </div>
+                      <div class="header__menu header__menu-black f-left">
+                          <nav id="mobile-menu" [ngClass]="{'no-display' : !navbarMobileOpen}">
+                              <ul>
+                                  <li class="active"><a href="#">Home</a>
+                                      <ul class="submenu">
+                                          <li><a href="index.html">Home Style 1</a></li>
+                                          <li><a href="index-2.html">Home Style 2</a>
+                                          </li>
+                                          <li><a href="index-3.html">Home Style 3</a></li>
+                                          <li><a href="index-4.html">Home Style 4</a></li>
+                                          <li><a href="index-5..html">Home Style 5</a></li>
+                                      </ul>
+                                  </li>
+                                  <li><a href="politic.html">News</a></li>
+                                  <li><a href="tech.html">Tech</a></li>
+                                  <li><a href="lifestyle.html">Enterteinment</a></li>
+                                  <li><a href="lifestyle.html">Lifestyle</a></li>
+                                  <li><a href="blog-standard.html">Blog</a>
+                                      <ul class="submenu">
+                                          <li><a href="blog-3-column.html">BLog 3 Column</a></li>
+                                          <li><a href="blog-standard.html">BLog Sidebar</a></li>
+                                          <li><a href="post-details.html">BLog Details</a></li>
+                                      </ul>
+                                  </li>
+                                  <li><a href="portfolio-full.html">Portfolio</a>
+                                      <ul class="submenu">
+                                          <li><a href="portfolio-box.html">Portfolio Box</a></li>
+                                          <li><a href="portfolio-full.html">Portfolio Box</a>
+                                          </li>
+
+                                      </ul>
+                                  </li>
+                                  <li><a href="#">Pages</a>
+                                      <ul class="submenu">
+                                          <li><a href="contact.html">Contact</a></li>
+                                          <li><a href="lifestyle.html">Lifestyle</a>
+                                          </li>
+                                          <li><a href="politic.html">Politic</a></li>
+                                          <li><a href="tech.html">Technology</a></li>
+                                          <li><a href="post-details.html">Post Details</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </nav>
+                      </div>
+
+                      <div class="mobile-menu black-icon" [ngClass]="{'mean-container' : !navbarMobileOpen}">
+                        <div class="mean-bar">
+                          <a (click)="changeMenuState()" class="meanmenu-reveal" style="background:;color:;right:0;left:auto;border: 1px solid #666666; color: #666666;">
+                            <span style="background-color: #666666"></span><span style="background-color: #666666"></span><span style="background-color: #666666"></span>
+                          </a>
+                          <div class="margin-getir"></div>
+                          <nav class="mean-nav" *ngIf="mobileMenuOpen" [@mobileMenuAnimation]="'displayMobileMenu'">
+                            <ul>
+                                <li class="active"><a href="#" style="font-size: 16px; color: #666666;">Ana Sayfa</a></li>
+                                <li><a href="politic.html" style="font-size: 16px; color: #666666;">Avukata Danışın</a></li>
+                                <li><a href="tech.html" style="font-size: 16px; color: #666666;">Hakaret</a></li>
+                                <li><a href="lifestyle.html" style="font-size: 16px; color: #666666;">Yaralama</a></li>
+                                <li><a href="lifestyle.html" style="font-size: 16px; color: #666666;">Örgüt Suçları</a></li>
+                                <li><a href="blog-standard.html" style="font-size: 16px; color: #666666;">Uzmanlıklar</a>
+                                    <ul class="submenu">
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="blog-3-column.html" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="blog-standard.html" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="post-details.html" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="post-details.html" style="font-size: 16px; color: #333333;">Yasak Madde Suçları</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="post-details.html" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
+
+                                    </ul>
+                                <a (click)="changeUzmanliklarSubMenu()" class="mean-expand" style="font-size: 18px; color: #666666">+</a></li>
+
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  <!--
+      <nav class="navbar navbar-expand-lg header__menu-area grey-bg">
+
+
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+  -->
+
+      <div class="extra-info">
+          <div class="close-icon">
+              <button>
+                  <i class="far fa-window-close"></i>
+              </button>
+          </div>
+          <div class="header__logo">
+              <a href="index.html">
+                  <img src="assets/img/logo/footer-logo.png" alt="Header Logo">
+              </a>
+          </div>
+          <div class="social-icon-right mt-30 mb-50">
+              <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                  <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                  <i class="fab fa-google-plus-g"></i>
+              </a>
+              <a href="#">
+                  <i class="fab fa-instagram"></i>
+              </a>
+          </div>
+          <div class="side-menu mb-30">
+              <ul>
+                  <li>
+                      <a href="#">Home</a>
+                  </li>
+                  <li>
+                      <a href="#">Features</a>
+                  </li>
+                  <li>
+                      <a href="#">News</a>
+                  </li>
+                  <li>
+                      <a href="#">Tech</a>
+                  </li>
+                  <li>
+                      <a href="#">Enterteinment</a>
+                  </li>
+                  <li>
+                      <a href="#">Lifestyle</a>
+                  </li>
+                  <li>
+                      <a href="#">Review</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="side-post">
+              <h3>Popular Post</h3>
+              <div class="post__small mb-20">
+                  <div class="post__small-thumb f-left">
+                      <a href="#">
+                          <img src="assets/img/trendy/xs/xs-1.jpg" alt="hero image">
+                      </a>
+                  </div>
+                  <div class="post__small-text fix pl-10">
+                      <span class="sm-cat">
+                          <a href="#">Fashion</a>
+                      </span>
+                      <h4 class="title-13 pr-0">
+                          <a href="#">Storm in aw ame home away.</a>
+                      </h4>
+                      <div class="post__small-text-meta">
+                          <ul>
+                              <li>
+                                  <i class="fas fa-calendar-alt"></i>
+                                  <span>01 Sep 2018</span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="post__small mb-20">
+                  <div class="post__small-thumb f-left">
+                      <a href="#">
+                          <img src="assets/img/trendy/xs/xs-2.jpg" alt="hero image">
+                      </a>
+                  </div>
+                  <div class="post__small-text fix pl-10">
+                      <span class="sm-cat">
+                          <a href="#">Fashion</a>
+                      </span>
+                      <h4 class="title-13 pr-0">
+                          <a href="#">Good ridre urants bid farewell.</a>
+                      </h4>
+                      <div class="post__small-text-meta">
+                          <ul>
+                              <li>
+                                  <i class="fas fa-calendar-alt"></i>
+                                  <span>01 Sep 2018</span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="post__small mb-20">
+                  <div class="post__small-thumb f-left">
+                      <a href="#">
+                          <img src="assets/img/trendy/xs/xs-3.jpg" alt="hero image">
+                      </a>
+                  </div>
+                  <div class="post__small-text fix pl-10">
+                      <span class="sm-cat">
+                          <a href="#">Fashion</a>
+                      </span>
+                      <h4 class="title-13 pr-0">
+                          <a href="#">Nahan dow plays Lieral lership..</a>
+                      </h4>
+                      <div class="post__small-text-meta">
+                          <ul>
+                              <li>
+                                  <i class="fas fa-calendar-alt"></i>
+                                  <span>01 Sep 2018</span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="post__small mb-20">
+                  <div class="post__small-thumb f-left">
+                      <a href="#">
+                          <img src="assets/img/trendy/xs/xs-4.jpg" alt="hero image">
+                      </a>
+                  </div>
+                  <div class="post__small-text fix pl-10">
+                      <span class="sm-cat">
+                          <a href="#">Travel</a>
+                      </span>
+                      <h4 class="title-13 pr-0">
+                          <a href="#">Weinstein pushs for dismissal.</a>
+                      </h4>
+                      <div class="post__small-text-meta">
+                          <ul>
+                              <li>
+                                  <i class="fas fa-calendar-alt"></i>
+                                  <span>01 Sep 2018</span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Modal Search -->
+      <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <form>
+                      <input type="text" placeholder="Search here...">
+                      <button>
+                          <i class="fa fa-search"></i>
+                      </button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- header end -->
+
+  <main>
+
+    <br>
+
+      <!-- hero-area start -->
+      <section class="hero-area">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                      <div class="hero pos-relative mb-30">
+                          <div class="hero__thumb" data-overlay="dark-gradient">
+                              <a href="#"><img src="assets/img/hero/part1/hero1.jpg" alt="hero image"></a>
+                          </div>
+                          <div class="hero__text">
+                              <span class="post-cat mb-10"><a href="#">politics</a></span>
+                              <h3 class="pr-100"><a href="#">Woman fights for life after car hits two at netball courts</a></h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="hero pos-relative mb-30">
+                          <div class="hero__thumb" data-overlay="dark-gradient">
+                              <a href="#">
+                                  <img src="assets/img/hero/part1/hero2.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="hero__text hero__text-small">
+                              <span class="post-cat mb-10">
+                                  <a href="#">fashion</a>
+                              </span>
+                              <h3 class="pr-0">
+                                  <a href="#">Hamels solid in debut as cubs throttle pirates world.</a>
+                              </h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="hero pos-relative mb-30">
+                          <div class="hero__thumb" data-overlay="dark-gradient">
+                              <a href="#">
+                                  <img src="assets/img/hero/part1/hero3.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="hero__text hero__text-small">
+                              <span class="post-cat mb-10">
+                                  <a href="#">fashion</a>
+                              </span>
+                              <h3 class="pr-0">
+                                  <a href="#">Must be solid in debut as cubs throttle pirates world.</a>
+                              </h3>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- hero-area end -->
+
+      <!-- news area -->
+      <section class="news-area pt-30 pb-30">
+          <!-- trendy news -->
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="section-title mb-30">
+                          <h2>trendy news</h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row row-10">
+                  <div class="col-20">
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/trendy/sm1.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-10">
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <h4 class="pr-0">
+                                  <a href="#">Paul Manafort’s Accountant Testifies She Helped Alter Financial Documents</a>
+                              </h4>
+                          </div>
+                      </div>
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/trendy/sm2.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-10">
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <h4 class="pr-0">
+                                  <a href="#">Rina Sawayama Is Not the Asian Britney Spears</a>
+                              </h4>
+                          </div>
+                      </div>
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/trendy/sm3.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-10">
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <h4 class="pr-0">
+                                  <a href="#">Receiving the Summer Sols tice the Swedish Way</a>
+                              </h4>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-40">
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/trendy/lg1.jpg" alt="hero image">
+                              </a>
+                              <span class="post-cat post-absolute">
+                                  <a href="#">politic</a>
+                              </span>
+                          </div>
+                          <div class="postbox__text pt-10">
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <h4 class="title-16 pr-0">
+                                  <a href="#">Trump’s Inaccurate Claims About High ways the world, Immigration and Beyoncé.</a>
+                              </h4>
+                          </div>
+                      </div>
+
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/trendy/lg2.jpg" alt="hero image">
+                              </a>
+                              <span class="post-cat post-absolute">
+                                  <a href="#">travel</a>
+                              </span>
+                          </div>
+                          <div class="postbox__text pt-10">
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <h4 class="title-16 pr-0">
+                                  <a href="#">Moving From Buyer to Seller, Major League Soccer Revenue In The World Wide Claims About.</a>
+                              </h4>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-20 d-md-none d-xl-block">
+                      <div class="post__small mb-30">
+                          <div class="post__small-thumb f-left">
+                              <a href="#">
+                                  <img src="assets/img/trendy/xs/xs-1.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="post__small-text fix pl-10">
+                              <span class="sm-cat">
+                                  <a href="#">Fashion</a>
+                              </span>
+                              <h4 class="title-13 pr-0">
+                                  <a href="#">Storm in aw ame home away.</a>
+                              </h4>
+                              <div class="post__small-text-meta">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="post__small mb-30">
+                          <div class="post__small-thumb f-left">
+                              <a href="#">
+                                  <img src="assets/img/trendy/xs/xs-2.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="post__small-text fix pl-10">
+                              <span class="sm-cat">
+                                  <a href="#">Fashion</a>
+                              </span>
+                              <h4 class="title-13 pr-0">
+                                  <a href="#">Good ridre urants bid farewell.</a>
+                              </h4>
+                              <div class="post__small-text-meta">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="post__small mb-30">
+                          <div class="post__small-thumb f-left">
+                              <a href="#">
+                                  <img src="assets/img/trendy/xs/xs-3.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="post__small-text fix pl-10">
+                              <span class="sm-cat">
+                                  <a href="#">Fashion</a>
+                              </span>
+                              <h4 class="title-13 pr-0">
+                                  <a href="#">Nahan dow plays Lieral lership..</a>
+                              </h4>
+                              <div class="post__small-text-meta">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="post__small mb-30">
+                          <div class="post__small-thumb f-left">
+                              <a href="#">
+                                  <img src="assets/img/trendy/xs/xs-4.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="post__small-text fix pl-10">
+                              <span class="sm-cat">
+                                  <a href="#">Travel</a>
+                              </span>
+                              <h4 class="title-13 pr-0">
+                                  <a href="#">Weinstein pushs for dismissal.</a>
+                              </h4>
+                              <div class="post__small-text-meta">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="post__small mb-30">
+                          <div class="post__small-thumb f-left">
+                              <a href="#">
+                                  <img src="assets/img/trendy/xs/xs-5.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="post__small-text fix pl-10">
+                              <span class="sm-cat">
+                                  <a href="#">Politic</a>
+                              </span>
+                              <h4 class="title-13 pr-0">
+                                  <a href="#">New Season Tiets Seat Optional.</a>
+                              </h4>
+                              <div class="post__small-text-meta">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="post__small mb-30">
+                          <div class="post__small-thumb f-left">
+                              <a href="#">
+                                  <img src="assets/img/trendy/xs/xs-6.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="post__small-text fix pl-10">
+                              <span class="sm-cat">
+                                  <a href="#">Study</a>
+                              </span>
+                              <h4 class="title-13 pr-0">
+                                  <a href="#">For Marilyn St Any Place Can Be..</a>
+                              </h4>
+                              <div class="post__small-text-meta">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="post-btn mb-30">
+                         <a href="#" class="btn btn-border">view more</a>
+                      </div>
+                  </div>
+                  <div class="col-20 ">
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/trendy/sm4.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-10">
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <h4 class="pr-0">
+                                  <a href="#">Paul Manafort’s Accountant Testifies She Helped Alter Financial Documents</a>
+                              </h4>
+                          </div>
+                      </div>
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/trendy/sm5.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-10">
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <h4 class="pr-0">
+                                  <a href="#">Rina Sawayama Is Not the Asian Britney Spears</a>
+                              </h4>
+                          </div>
+                      </div>
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/trendy/sm6.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-10">
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <h4 class="pr-0">
+                                  <a href="#">Receiving the Summer Sols tice the Swedish Way</a>
+                              </h4>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- trendy news end -->
+      </section>
+      <!-- news area end -->
+
+
+      <!-- cat news -->
+      <section class="cat-area pb-30">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-4 col-lg-4 col-md-6">
+                      <div class="section-title mb-30">
+                          <h2>Science</h2>
+                      </div>
+
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/cat/cat1.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-20">
+                              <h4 class="title-18 pr-0">
+                                  <a href="#">Mustify Winner Is Rtired Because of Weaths Bads Ankle World Wide.</a>
+                              </h4>
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="cat-sm-post">
+                          <div class="post__small mb-30">
+                              <div class="post__small-thumb f-left">
+                                  <a href="#">
+                                      <img src="assets/img/trendy/xs/xs-12.jpg" alt="hero image">
+                                  </a>
+                              </div>
+                              <div class="post__small-text fix pl-10">
+                                  <h4 class="title-16 pr-0 mt-0">
+                                      <a href="#">Hobots or Job Training: Mnutuers Grapple With How to Improve.</a>
+                                  </h4>
+                                  <div class="post__small-text-meta">
+                                      <ul>
+                                          <li>
+                                              <i class="fas fa-calendar-alt"></i>
+                                              <span>01 Sep 2018</span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="post__small mb-30">
+                              <div class="post__small-thumb f-left">
+                                  <a href="#">
+                                      <img src="assets/img/trendy/xs/xs-11.jpg" alt="hero image">
+                                  </a>
+                              </div>
+                              <div class="post__small-text fix pl-10">
+                                  <h4 class="title-16 pr-0 mt-0">
+                                      <a href="#">Robots or Job Training: Manutues Grapple With How to Improve..</a>
+                                  </h4>
+                                  <div class="post__small-text-meta">
+                                      <ul>
+                                          <li>
+                                              <i class="fas fa-calendar-alt"></i>
+                                              <span>01 Sep 2018</span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-6">
+                      <div class="section-title mb-30">
+                          <h2>travel</h2>
+                      </div>
+
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/cat/cat2.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-20">
+                              <h4 class="title-18 pr-0">
+                                  <a href="#">Robots or Job Training: Manutues Grapple With How to Improve.</a>
+                              </h4>
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="cat-sm-post">
+                          <div class="post__small mb-30">
+                              <div class="post__small-thumb f-left">
+                                  <a href="#">
+                                      <img src="assets/img/trendy/xs/xs-7.jpg" alt="hero image">
+                                  </a>
+                              </div>
+                              <div class="post__small-text fix pl-10">
+                                  <h4 class="title-16 pr-0 mt-0">
+                                      <a href="#">Canadian Shoppers Pay When Visa and MasterCard.</a>
+                                  </h4>
+                                  <div class="post__small-text-meta">
+                                      <ul>
+                                          <li>
+                                              <i class="fas fa-calendar-alt"></i>
+                                              <span>01 Sep 2018</span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="post__small mb-30">
+                              <div class="post__small-thumb f-left">
+                                  <a href="#">
+                                      <img src="assets/img/trendy/xs/xs-8.jpg" alt="hero image">
+                                  </a>
+                              </div>
+                              <div class="post__small-text fix pl-10">
+                                  <h4 class="title-16 pr-0 mt-0">
+                                      <a href="#">Who is next football Super Hero. Check the future star</a>
+                                  </h4>
+                                  <div class="post__small-text-meta">
+                                      <ul>
+                                          <li>
+                                              <i class="fas fa-calendar-alt"></i>
+                                              <span>01 Sep 2018</span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-6 d-md-none d-lg-block">
+                      <div class="section-title mb-30">
+                          <h2>lifestyle</h2>
+                      </div>
+
+                      <div class="postbox mb-25">
+                          <div class="postbox__thumb">
+                              <a href="#">
+                                  <img src="assets/img/cat/cat3.jpg" alt="hero image">
+                              </a>
+                          </div>
+                          <div class="postbox__text pt-20">
+                              <h4 class="title-18 pr-0">
+                                  <a href="#">Denying passports to Americans along the border throwing their citizens.</a>
+                              </h4>
+                              <div class="postbox__text-meta pb-10">
+                                  <ul>
+                                      <li>
+                                          <i class="fas fa-calendar-alt"></i>
+                                          <span>01 Sep 2018</span>
+                                      </li>
+                                      <li>
+                                          <i class="far fa-comment"></i>
+                                          <span>(03)</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="cat-sm-post">
+                          <div class="post__small mb-30">
+                              <div class="post__small-thumb f-left">
+                                  <a href="#">
+                                      <img src="assets/img/trendy/xs/xs-10.jpg" alt="hero image">
+                                  </a>
+                              </div>
+                              <div class="post__small-text fix pl-10">
+                                  <h4 class="title-16 pr-0 mt-0">
+                                      <a href="#">Hobots or Job Training: Mnutuers Grapple With How to Improve.</a>
+                                  </h4>
+                                  <div class="post__small-text-meta">
+                                      <ul>
+                                          <li>
+                                              <i class="fas fa-calendar-alt"></i>
+                                              <span>01 Sep 2018</span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="post__small mb-30">
+                              <div class="post__small-thumb f-left">
+                                  <a href="#">
+                                      <img src="assets/img/trendy/xs/xs-9.jpg" alt="hero image">
+                                  </a>
+                              </div>
+                              <div class="post__small-text fix pl-10">
+                                  <h4 class="title-16 pr-0 mt-0">
+                                      <a href="#">Robots or Job Training: Manutues Grapple With How to Improve..</a>
+                                  </h4>
+                                  <div class="post__small-text-meta">
+                                      <ul>
+                                          <li>
+                                              <i class="fas fa-calendar-alt"></i>
+                                              <span>01 Sep 2018</span>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- cat news end -->
+
+
+
+    <section class="app-area pb-60">
+      <div class="grey-bg pt-55 pb-55 pl-60 pr-60">
+        <div class="row">
+          <div class="col-xl-6 col-lg-12">
+            <div class="app-text text-center text-xl-left">
+              <h2>Bizi Cepten Takip Edin</h2>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-12">
+            <div class="app-store text-center text-xl-right">
+              <img class="mr-2 mb-1" src="assets/img/store/apple.png" alt="apple store app">
+              <img src="assets/img/store/google.png" alt="play store app">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="footer-bg">
+      <div class="subscribe-area pt-100 pb-80">
+          <div class="container">
+              <div class="subscribe-separator pt-50 pb-20">
+                  <div class="row">
+                      <div class="col-xl-2 col-lg-12">
+                          <div class="footer-logo mb-30">
+                              <a href="#"><img src="assets/img/logo/footer-logo.png" alt=""></a>
+                          </div>
+                      </div>
+                      <div class="col-xl-10 col-lg-12">
+                          <div class="row">
+                              <div class="col-xl-7 col-lg-7">
+                                  <div class="subscribe-title">
+                                      <h2>subscribe our newsletter</h2>
+                                  </div>
+                              </div>
+                              <div class="col-xl-5 col-lg-5">
+                                  <div class="subscribe-form mb-30">
+                                      <form action="#">
+                                          <input type="email" placeholder="Enter your email">
+                                          <button type="submit">
+                                              subscribe
+                                          </button>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom-area pb-70">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-4">
+                      <div class="footer-widget mb-30">
+                          <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising
+                              pain was born and I will give you
+                              a complete account of the system, and expound the actual teachings of the great explorer of
+                              the truth, the master-builder
+                              of human happiness.</p>
+                          <div class="footer-social">
+                              <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                              <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                              <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+                              <a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a>
+                              <a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i></a>
+                              <a class="google-plus" href="#"><i class="fab fa-google-plus-g"></i></a>
+                              <a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-8">
+                      <div class="widget-box mb-30">
+                          <div class="row">
+                              <div class="col-xl-3 col-lg-3">
+                                  <div class="footer-widget mb-30">
+                                      <h3>Quick Link</h3>
+                                      <ul>
+                                          <li><a href="#">Politic</a></li>
+                                          <li><a href="#">Travel</a></li>
+                                          <li><a href="#">Study</a></li>
+                                          <li><a href="#">Country</a></li>
+                                          <li><a href="#">Sports</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-3">
+                                  <div class="footer-widget mb-30">
+                                      <h3>Most Visited</h3>
+                                      <ul>
+                                          <li><a href="#">Latest News </a></li>
+                                          <li><a href="#">Most Visited</a></li>
+                                          <li><a href="#">Recent News</a></li>
+                                          <li><a href="#">International</a></li>
+                                          <li><a href="#">Entertainment</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-3">
+                                  <div class="footer-widget mb-30">
+                                      <h3>About Us</h3>
+                                      <ul>
+                                          <li><a href="#">Feature</a></li>
+                                          <li><a href="#">About Us</a></li>
+                                          <li><a href="#">Life Style</a></li>
+                                          <li><a href="#">Economic</a></li>
+                                          <li><a href="#">Business</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-3">
+                                  <div class="footer-widget pt-50 mb-30">
+                                      <ul>
+                                          <li><a href="#"><i class="fas fa-video"></i> Video</a></li>
+                                          <li><a href="#"><i class="fas fa-camera-retro"></i> Picture</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="copyright-area pt-25 pb-25">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="copyright text-center">
+                          <p>© Copyrights 2018. All rights reserved.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+</div>
