@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import {
   trigger,
   state,
@@ -6,6 +7,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+
 
 @Component({
   selector: 'app-root',
@@ -23,6 +25,7 @@ export class AppComponent implements OnInit {
   mobileMenuOpen: boolean = false;
 
   uzmanliklarOpened: boolean = false;
+  desktopSubState: boolean = false;
 
   @HostListener('window:resize', ['$event']) handleResize(event) {
     if (window.innerWidth < 992) {
@@ -32,6 +35,8 @@ export class AppComponent implements OnInit {
       this.mobileMenuOpen = false;
     }
   }
+
+
 
   ngOnInit() {
 
@@ -44,7 +49,7 @@ export class AppComponent implements OnInit {
 
   changeMenuState() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
-    this.uzmanliklarOpened = false; 
+    this.uzmanliklarOpened = false;
   }
 
   changeUzmanliklarSubMenu() {

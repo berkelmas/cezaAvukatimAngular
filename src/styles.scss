@@ -5,7 +5,7 @@
 }
 
 .mean-nav {
-  background-color: #f7f7f7!important;
+  background-color: #f7f7fd!important;
 }
 
 .margin-getir {
@@ -15,6 +15,14 @@
 .mean-expand {
 
   &:hover {
-    background-color: #f7f7f7!important;
+    background-color: #f7f7fd!important;
+  }
+}
+
+.submenu-item {
+
+  &:hover {
+    background-color: red!important;
+    color: white!important;  
   }
 }
