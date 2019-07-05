@@ -1,12 +1,12 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import {
   trigger,
-  state,
   style,
   animate,
   transition
 } from '@angular/animations';
+
+import { MakalelerService } from './makaleler.service';
 
 
 @Component({
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-
+  constructor(private makalelerService: MakalelerService) {}
 
   ngOnInit() {
 
@@ -45,7 +45,21 @@ export class AppComponent implements OnInit {
     } else {
       this.navbarMobileOpen = true;
     }
+
+    // Get first Articles at first.
+    this.makalelerService.getFirstSixArticle()
+      .subscribe(res => this.makalelerService.firstSixArticle.next(res['results']) );
+
+    this.makalelerService.getFirstFourUyusturucumaddesuclari()
+    .subscribe(res => this.makalelerService.firstFourUyusturucumaddesuclari.next(res['results']));
+
+    this.makalelerService.getFirstFourBeyazyakalisuclari()
+      .subscribe(res => this.makalelerService.firstFourBeyazyakalisuclari.next(res['results']));
+
+    this.makalelerService.getFirstFourHakaret()
+      .subscribe(res => this.makalelerService.FirstFourHakaret.next(res['results']));
   }
+
 
   changeMenuState() {
     this.mobileMenuOpen = !this.mobileMenuOpen;

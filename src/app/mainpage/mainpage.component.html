@@ -2,51 +2,56 @@
 <section class="hero-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-12">
+
+          <ng-container *ngFor="let firstArticle of firstSixArticle; let iFirst = index">
+            <div *ngIf="iFirst === 0" class="col-lg-6 col-md-12">
                 <div class="hero pos-relative mb-30">
                     <div class="hero__thumb" data-overlay="dark-gradient">
-                        <a href="#"><img src="assets/img/hero/part1/hero1.jpg" alt="hero image"></a>
+                        <a href="#"><img src="{{ environment.apiEndpoint + 'media/' + firstArticle.image625x400 }}" alt="hero image"></a>
                     </div>
                     <div class="hero__text">
-                        <span class="post-cat mb-10"><a href="#">politics</a></span>
-                        <h3 class="pr-100"><a href="#">Woman fights for life after car hits two at netball courts</a></h3>
+                        <span class="post-cat mb-10"><a href="#">{{ firstArticle.makale_kategori }}</a></span>
+                        <h3 class="pr-100"><a href="#">{{ firstArticle.makale_baslik }}</a></h3>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div *ngIf="iFirst === 1" class="col-lg-3 col-md-6">
                 <div class="hero pos-relative mb-30">
                     <div class="hero__thumb" data-overlay="dark-gradient">
                         <a href="#">
-                            <img src="assets/img/hero/part1/hero2.jpg" alt="hero image">
+                            <img src="{{ environment.apiEndpoint + 'media/' + firstArticle.image297x400 }}" alt="hero image">
                         </a>
                     </div>
                     <div class="hero__text hero__text-small">
                         <span class="post-cat mb-10">
-                            <a href="#">fashion</a>
+                            <a href="#">{{ firstArticle.makale_kategori }}</a>
                         </span>
                         <h3 class="pr-0">
-                            <a href="#">Hamels solid in debut as cubs throttle pirates world.</a>
+                            <a href="#">{{firstArticle.makale_baslik}}</a>
                         </h3>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div *ngIf="iFirst === 2" class="col-lg-3 col-md-6">
                 <div class="hero pos-relative mb-30">
                     <div class="hero__thumb" data-overlay="dark-gradient">
                         <a href="#">
-                            <img src="assets/img/hero/part1/hero3.jpg" alt="hero image">
+                            <img src="{{ environment.apiEndpoint + 'media/' + firstArticle.image297x400 }}" alt="hero image">
                         </a>
                     </div>
                     <div class="hero__text hero__text-small">
                         <span class="post-cat mb-10">
-                            <a href="#">fashion</a>
+                            <a href="#">{{ firstArticle.makale_kategori }}</a>
                         </span>
                         <h3 class="pr-0">
-                            <a href="#">Must be solid in debut as cubs throttle pirates world.</a>
+                            <a href="#">{{firstArticle.makale_baslik}}</a>
                         </h3>
                     </div>
                 </div>
             </div>
+          </ng-container>
+
+
         </div>
     </div>
 </section>
@@ -59,7 +64,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title mb-30">
-                    <h2>trendy news</h2>
+                    <h2>Cezada Son Yayınlar</h2>
                 </div>
             </div>
         </div>
@@ -67,10 +72,12 @@
     <div class="container">
         <div class="row row-10">
             <div class="col-20">
-                <div class="postbox mb-25">
+
+              <ng-container *ngFor="let yaralamaItem of firstFourYaralama; let iYaralama = index">
+                <div *ngIf="iYaralama < 3" class="postbox mb-25">
                     <div class="postbox__thumb">
                         <a href="#">
-                            <img src="assets/img/trendy/sm1.jpg" alt="hero image">
+                            <img src="{{ environment.apiEndpoint + 'media/' + yaralamaItem.image240x160 }}" alt="hero image">
                         </a>
                     </div>
                     <div class="postbox__text pt-10">
@@ -78,76 +85,35 @@
                             <ul>
                                 <li>
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
+                                    <span>{{ yaralamaItem.makale_yayintarihi }}</span>
                                 </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
+
                             </ul>
                         </div>
                         <h4 class="pr-0">
-                            <a href="#">Paul Manafort’s Accountant Testifies She Helped Alter Financial Documents</a>
+                            <a href="#">{{ yaralamaItem.makale_baslik }}</a>
                         </h4>
                     </div>
                 </div>
-                <div class="postbox mb-25">
-                    <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="assets/img/trendy/sm2.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="postbox__text pt-10">
-                        <div class="postbox__text-meta pb-10">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <h4 class="pr-0">
-                            <a href="#">Rina Sawayama Is Not the Asian Britney Spears</a>
-                        </h4>
-                    </div>
-                </div>
-                <div class="postbox mb-25">
-                    <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="assets/img/trendy/sm3.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="postbox__text pt-10">
-                        <div class="postbox__text-meta pb-10">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <h4 class="pr-0">
-                            <a href="#">Receiving the Summer Sols tice the Swedish Way</a>
-                        </h4>
-                    </div>
-                </div>
+              </ng-container>
+
+
+
+
             </div>
+
+
+            <!-- 2 x 500x287 -->
             <div class="col-40">
-                <div class="postbox mb-25">
+
+              <ng-container *ngFor="let hakaretTwo of FirstFourHakaret; let iHakaretTwo = index;">
+                <div *ngIf="iHakaretTwo < 2" class="postbox mb-25">
                     <div class="postbox__thumb">
                         <a href="#">
-                            <img src="assets/img/trendy/lg1.jpg" alt="hero image">
+                            <img src="{{ environment.apiEndpoint + 'media/' + hakaretTwo.image500x287 }}" alt="hero image">
                         </a>
                         <span class="post-cat post-absolute">
-                            <a href="#">politic</a>
+                            <a href="#">{{ hakaretTwo.makale_kategori }}</a>
                         </span>
                     </div>
                     <div class="postbox__text pt-10">
@@ -155,196 +121,63 @@
                             <ul>
                                 <li>
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
+                                    <span>{{ hakaretTwo.makale_yayintarihi }}</span>
                                 </li>
                             </ul>
                         </div>
                         <h4 class="title-16 pr-0">
-                            <a href="#">Trump’s Inaccurate Claims About High ways the world, Immigration and Beyoncé.</a>
+                            <a href="#">{{ hakaretTwo.makale_baslik }}</a>
                         </h4>
                     </div>
+                </div>
+              </ng-container>
+
+            </div>
+
+
+            <!-- 6 x 100x85 -->
+            <div class="col-20 d-md-none d-xl-block">
+              <ng-container *ngFor="let smallItem of firstSixArticle; let iSmall = index;">
+
+                <div class="post__small mb-30">
+                    <div class="post__small-thumb f-left">
+                        <a href="#">
+                            <img src="{{ environment.apiEndpoint + 'media/' + smallItem.image100x85 }}" alt="hero image">
+                        </a>
+                    </div>
+                    <div class="post__small-text fix pl-10">
+                        <span class="sm-cat">
+                            <a href="#">{{ smallItem.makale_kategori }}</a>
+                        </span>
+                        <h4 class="title-13 pr-0">
+                            <a href="#">{{ smallItem.makale_baslik }}</a>
+                        </h4>
+                        <div class="post__small-text-meta">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ smallItem.makale_yayintarihi }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </ng-container>
+
+                <div class="post-btn mb-30">
+                   <a href="#" class="btn btn-border">Tüm Yayınlar</a>
                 </div>
 
-                <div class="postbox mb-25">
-                    <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="assets/img/trendy/lg2.jpg" alt="hero image">
-                        </a>
-                        <span class="post-cat post-absolute">
-                            <a href="#">travel</a>
-                        </span>
-                    </div>
-                    <div class="postbox__text pt-10">
-                        <div class="postbox__text-meta pb-10">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <h4 class="title-16 pr-0">
-                            <a href="#">Moving From Buyer to Seller, Major League Soccer Revenue In The World Wide Claims About.</a>
-                        </h4>
-                    </div>
-                </div>
             </div>
-            <div class="col-20 d-md-none d-xl-block">
-                <div class="post__small mb-30">
-                    <div class="post__small-thumb f-left">
-                        <a href="#">
-                            <img src="assets/img/trendy/xs/xs-1.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="post__small-text fix pl-10">
-                        <span class="sm-cat">
-                            <a href="#">Fashion</a>
-                        </span>
-                        <h4 class="title-13 pr-0">
-                            <a href="#">Storm in aw ame home away.</a>
-                        </h4>
-                        <div class="post__small-text-meta">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="post__small mb-30">
-                    <div class="post__small-thumb f-left">
-                        <a href="#">
-                            <img src="assets/img/trendy/xs/xs-2.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="post__small-text fix pl-10">
-                        <span class="sm-cat">
-                            <a href="#">Fashion</a>
-                        </span>
-                        <h4 class="title-13 pr-0">
-                            <a href="#">Good ridre urants bid farewell.</a>
-                        </h4>
-                        <div class="post__small-text-meta">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="post__small mb-30">
-                    <div class="post__small-thumb f-left">
-                        <a href="#">
-                            <img src="assets/img/trendy/xs/xs-3.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="post__small-text fix pl-10">
-                        <span class="sm-cat">
-                            <a href="#">Fashion</a>
-                        </span>
-                        <h4 class="title-13 pr-0">
-                            <a href="#">Nahan dow plays Lieral lership..</a>
-                        </h4>
-                        <div class="post__small-text-meta">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="post__small mb-30">
-                    <div class="post__small-thumb f-left">
-                        <a href="#">
-                            <img src="assets/img/trendy/xs/xs-4.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="post__small-text fix pl-10">
-                        <span class="sm-cat">
-                            <a href="#">Travel</a>
-                        </span>
-                        <h4 class="title-13 pr-0">
-                            <a href="#">Weinstein pushs for dismissal.</a>
-                        </h4>
-                        <div class="post__small-text-meta">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="post__small mb-30">
-                    <div class="post__small-thumb f-left">
-                        <a href="#">
-                            <img src="assets/img/trendy/xs/xs-5.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="post__small-text fix pl-10">
-                        <span class="sm-cat">
-                            <a href="#">Politic</a>
-                        </span>
-                        <h4 class="title-13 pr-0">
-                            <a href="#">New Season Tiets Seat Optional.</a>
-                        </h4>
-                        <div class="post__small-text-meta">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="post__small mb-30">
-                    <div class="post__small-thumb f-left">
-                        <a href="#">
-                            <img src="assets/img/trendy/xs/xs-6.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="post__small-text fix pl-10">
-                        <span class="sm-cat">
-                            <a href="#">Study</a>
-                        </span>
-                        <h4 class="title-13 pr-0">
-                            <a href="#">For Marilyn St Any Place Can Be..</a>
-                        </h4>
-                        <div class="post__small-text-meta">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="post-btn mb-30">
-                   <a href="#" class="btn btn-border">view more</a>
-                </div>
-            </div>
+
+            <!-- 3 x 240x160 makale -->
             <div class="col-20 ">
-                <div class="postbox mb-25">
+
+              <ng-container *ngFor="let beyazYakaliItem of firstFourBeyazyakalisuclari; let iBeyaz = index;">
+                <div *ngIf="iBeyaz < 3" class="postbox mb-25">
                     <div class="postbox__thumb">
                         <a href="#">
-                            <img src="assets/img/trendy/sm4.jpg" alt="hero image">
+                            <img src="{{ environment.apiEndpoint + 'media/' + beyazYakaliItem.image240x160 }}" alt="hero image">
                         </a>
                     </div>
                     <div class="postbox__text pt-10">
@@ -352,67 +185,17 @@
                             <ul>
                                 <li>
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
+                                    <span>{{ beyazYakaliItem.makale_yayintarihi }}</span>
                                 </li>
                             </ul>
                         </div>
                         <h4 class="pr-0">
-                            <a href="#">Paul Manafort’s Accountant Testifies She Helped Alter Financial Documents</a>
+                            <a href="#">{{ beyazYakaliItem.makale_baslik }}</a>
                         </h4>
                     </div>
                 </div>
-                <div class="postbox mb-25">
-                    <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="assets/img/trendy/sm5.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="postbox__text pt-10">
-                        <div class="postbox__text-meta pb-10">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <h4 class="pr-0">
-                            <a href="#">Rina Sawayama Is Not the Asian Britney Spears</a>
-                        </h4>
-                    </div>
-                </div>
-                <div class="postbox mb-25">
-                    <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="assets/img/trendy/sm6.jpg" alt="hero image">
-                        </a>
-                    </div>
-                    <div class="postbox__text pt-10">
-                        <div class="postbox__text-meta pb-10">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <h4 class="pr-0">
-                            <a href="#">Receiving the Summer Sols tice the Swedish Way</a>
-                        </h4>
-                    </div>
-                </div>
+              </ng-container>
+
             </div>
         </div>
     </div>
@@ -427,7 +210,7 @@
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="section-title mb-30">
-                    <h2>Science</h2>
+                    <h2>Yaralama</h2>
                 </div>
 
                 <div class="postbox mb-25">
@@ -446,10 +229,7 @@
                                     <i class="fas fa-calendar-alt"></i>
                                     <span>01 Sep 2018</span>
                                 </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -500,7 +280,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="section-title mb-30">
-                    <h2>travel</h2>
+                    <h2>Hakaret</h2>
                 </div>
 
                 <div class="postbox mb-25">
@@ -519,10 +299,7 @@
                                     <i class="fas fa-calendar-alt"></i>
                                     <span>01 Sep 2018</span>
                                 </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -573,7 +350,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 d-md-none d-lg-block">
                 <div class="section-title mb-30">
-                    <h2>lifestyle</h2>
+                    <h2>Örgüt Suçları</h2>
                 </div>
 
                 <div class="postbox mb-25">
@@ -592,10 +369,7 @@
                                     <i class="fas fa-calendar-alt"></i>
                                     <span>01 Sep 2018</span>
                                 </li>
-                                <li>
-                                    <i class="far fa-comment"></i>
-                                    <span>(03)</span>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
