@@ -8,12 +8,15 @@ import { MainmakalelerComponent } from './mainmakaleler/mainmakaleler.component'
 import { MakaledetayComponent } from './makaledetay/makaledetay.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', component: MainpageComponent, data: { animation: 'heroes' } },
+  {path: '', pathMatch: 'full', component: MainpageComponent},
   {path: 'yayinlar', component: MakalelerpageComponent, children: [
+
     {path: '', component: MainmakalelerComponent},
-    {path: ':kategori', component: MainmakalelerComponent},
+    {path: ':sayfa', component: MainmakalelerComponent},
+    {path: ':kategori/sayfa/:sayfa', component: MainmakalelerComponent},
+
     {path: ':id/:makaleslug', component: MakaledetayComponent}
-  ], data: { animation: 'hero' }}
+  ]}
 ];
 
 @NgModule({

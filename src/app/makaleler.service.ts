@@ -28,6 +28,35 @@ export class MakalelerService {
     return this.http.get(`${environment.apiEndpoint}makale/${id}`);
   }
 
+  getFourMakale(kategori: string, page: number) {
+    if (kategori === '' &&  page === 1) {
+      return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/`);
+    } else if (kategori !== '' && page === 1) {
+      switch(true) {
+        case (kategori === this.kategoriHakaret):
+          return this.FirstFourHakaret;
+
+        case (kategori === this.kategoriYaralama):
+          return this.firstFourYaralama;
+
+        case (kategori === this.kategoriOrgutsuclari):
+          return this.firstFourOrgutsuclari;
+
+        case (kategori === this.kategoriUyusturucumaddesuclari):
+          return this.firstFourUyusturucumaddesuclari;
+
+        case (kategori === this.kategoriBeyazyakalisuclari):
+          return this.firstFourBeyazyakalisuclari;
+
+      }
+    } else if (kategori !== '' && page !== 1) {
+      // Custom category, Custom Page
+      return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${kategori}&page=${page}`);
+    } else if (kategori === '' && page !== 1) {
+      return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?page=${page}`);
+    }
+  }
+
   /// GETTING INITIAL DATA FOR THE MAIN PAGE
   getFirstSixArticle() {
     return this.http.get(`${environment.apiEndpoint}mainpagenocontent/`);
