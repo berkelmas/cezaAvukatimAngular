@@ -14,29 +14,13 @@
                                   <a routerLink="/yayinlar">Yayınlar</a>
                               </li>
                               <li>
-                                  <a href="#">Privacy & Policy</a>
-                              </li>
-                              <li>
-                                  <a href="#">Contact Us</a>
+                                  <a href="#">Gizlilik Politikası</a>
                               </li>
                           </ul>
                       </div>
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-6">
-                      <div class="header__social header-social-black text-center text-md-right mt-10">
-                          <a href="#">
-                              <i class="fab fa-facebook-f"></i>
-                          </a>
-                          <a href="#">
-                              <i class="fab fa-twitter"></i>
-                          </a>
-                          <a href="#">
-                              <i class="fab fa-linkedin-in"></i>
-                          </a>
-                          <a href="#">
-                              <i class="fab fa-google-plus-g"></i>
-                          </a>
-                      </div>
+
                   </div>
               </div>
           </div>
@@ -46,8 +30,8 @@
               <div class="row">
                   <div class="col-lg-4 col-md-3 d-flex align-items-center justify-content-md-start justify-content-center">
                       <div class="header__logo text-center text-md-left mb-20">
-                          <a href="index.html">
-                              <img src="assets/img/logo/logo.png" alt="Header Logo">
+                          <a routerLink="/">
+                              <img src="assets/img/cezaavukatim-header.png" alt="Ceza Avukatım Logo">
                           </a>
                       </div>
                   </div>
@@ -70,18 +54,18 @@
                       <div class="header__menu header__menu-black f-left">
                           <nav id="mobile-menu" [ngClass]="{'no-display' : !navbarMobileOpen}">
                               <ul>
-                                  <li class="active"><a href="#">Ana Sayfa</a></li>
+                                  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="/">Ana Sayfa</a></li>
                                   <li><a href="tech.html">Avukata Danışın</a></li>
-                                  <li><a href="lifestyle.html">Hakaret</a></li>
-                                  <li><a href="lifestyle.html">Yaralama</a></li>
-                                  <li><a href="blog-standard.html">Örgüt Suçları</a></li>
-                                  <li><a (mouseenter)="desktopSubState= true" href="portfolio-full.html">Uzmanlıklar</a>
+                                  <li routerLinkActive="active"><a routerLink="/yayinlar/hakaret/sayfa/1">Hakaret</a></li>
+                                  <li routerLinkActive="active"><a routerLink="/yayinlar/yaralama/sayfa/1">Yaralama</a></li>
+                                  <li routerLinkActive="active"><a routerLink="/yayinlar/orgutsuclari/sayfa/1">Örgüt Suçları</a></li>
+                                  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a (mouseenter)="desktopSubState= true" routerLink="/yayinlar">Uzmanlıklar</a>
                                       <ul (mouseleave)="desktopSubState= false" *ngIf="desktopSubState" class="submenu" style="visibility: visible; background: #f7f7fd;">
-                                        <li><a href="blog-3-column.html" class="submenu-item" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
-                                        <li><a href="blog-standard.html" class="submenu-item" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
-                                        <li><a href="post-details.html" class="submenu-item" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
-                                        <li><a href="post-details.html" class="submenu-item" style="font-size: 16px; color: #333333;">Yasak Madde Suçları</a></li>
-                                        <li><a href="post-details.html" class="submenu-item" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
+                                        <li><a routerLink="/yayinlar/hakaret/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
+                                        <li><a routerLink="/yayinlar/orgutsuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
+                                        <li><a routerLink="/yayinlar/yaralama/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
+                                        <li><a routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Yasak Madde Suçları</a></li>
+                                        <li><a routerLink="/yayinlar/beyazyakalisuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
                                       </ul>
                                   </li>
                               </ul>
@@ -90,24 +74,24 @@
 
                       <div class="mobile-menu black-icon" [ngClass]="{'mean-container' : !navbarMobileOpen}">
                         <div class="mean-bar">
-                          <a (click)="changeMenuState()" class="meanmenu-reveal" style="background:;color:;right:0;left:auto;border: 1px solid #666666; color: #666666;">
+                          <a (click)="changeMenuState()" class="meanmenu-reveal" style="right:0;left:auto;border: 1px solid #666666; color: #666666;">
                             <span style="background-color: #666666"></span><span style="background-color: #666666"></span><span style="background-color: #666666"></span>
                           </a>
                           <div class="margin-getir"></div>
                           <nav class="mean-nav" *ngIf="mobileMenuOpen" [@mobileMenuAnimation]="'displayMobileMenu'">
                             <ul>
-                                <li class="active"><a href="#" style="font-size: 16px; color: #666666;">Ana Sayfa</a></li>
-                                <li><a href="politic.html" style="font-size: 16px; color: #666666;">Avukata Danışın</a></li>
-                                <li><a href="tech.html" style="font-size: 16px; color: #666666;">Hakaret</a></li>
-                                <li><a href="lifestyle.html" style="font-size: 16px; color: #666666;">Yaralama</a></li>
-                                <li><a href="lifestyle.html" style="font-size: 16px; color: #666666;">Örgüt Suçları</a></li>
-                                <li><a href="blog-standard.html" style="font-size: 16px; color: #666666;">Uzmanlıklar</a>
+                                <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/" style="font-size: 16px; color: #666666;">Ana Sayfa</a></li>
+                                <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" href="politic.html" style="font-size: 16px; color: #666666;">Avukata Danışın</a></li>
+                                <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/hakaret/sayfa/1" style="font-size: 16px; color: #666666;">Hakaret</a></li>
+                                <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/yaralama/sayfa/1" style="font-size: 16px; color: #666666;">Yaralama</a></li>
+                                <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/orgutsuclari/sayfa/1" style="font-size: 16px; color: #666666;">Örgüt Suçları</a></li>
+                                <li><a (click)="changeUzmanliklarSubMenu()" style="font-size: 16px; color: #666666;">Uzmanlıklar</a>
                                     <ul class="submenu">
-                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="blog-3-column.html" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
-                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="blog-standard.html" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
-                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="post-details.html" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
-                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="post-details.html" style="font-size: 16px; color: #333333;">Yasak Madde Suçları</a></li>
-                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a href="post-details.html" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/hakaret/sayfa/1" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/orgutsuclari/sayfa/1" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/yaralama/sayfa/1" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1" style="font-size: 16px; color: #333333;">Yasak Madde Suçları</a></li>
+                                        <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/beyazyakalisuclari/sayfa/1" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
                                     </ul>
                                 <a (click)="changeUzmanliklarSubMenu()" class="mean-expand" style="font-size: 18px; color: #666666; cursor: pointer;">+</a></li>
 
@@ -140,14 +124,14 @@
                   <div class="row">
                       <div class="col-xl-2 col-lg-12">
                           <div class="footer-logo mb-30">
-                              <a href="#"><img src="assets/img/logo/footer-logo.png" alt=""></a>
+                              <a routerLink="/"><img src="assets/img/cezaavukatim-footer.png" alt="Ceza Avukatım Beyaz Logo"></a>
                           </div>
                       </div>
                       <div class="col-xl-10 col-lg-12">
                           <div class="row">
                               <div class="col-xl-7 col-lg-7">
                                   <div class="subscribe-title">
-                                      <h2>subscribe our newsletter</h2>
+                                      <h2>BÜLTENİMİZE ABONE OLUN</h2>
                                   </div>
                               </div>
                               <div class="col-xl-5 col-lg-5">
@@ -155,7 +139,7 @@
                                       <form action="#">
                                           <input type="email" placeholder="Enter your email">
                                           <button type="submit">
-                                              subscribe
+                                              Abone Ol
                                           </button>
                                       </form>
                                   </div>
@@ -176,15 +160,7 @@
                               a complete account of the system, and expound the actual teachings of the great explorer of
                               the truth, the master-builder
                               of human happiness.</p>
-                          <div class="footer-social">
-                              <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
-                              <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
-                              <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
-                              <a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a>
-                              <a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i></a>
-                              <a class="google-plus" href="#"><i class="fab fa-google-plus-g"></i></a>
-                              <a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i></a>
-                          </div>
+
                       </div>
                   </div>
                   <div class="col-xl-8">
@@ -192,48 +168,29 @@
                           <div class="row">
                               <div class="col-xl-3 col-lg-3">
                                   <div class="footer-widget mb-30">
-                                      <h3>Quick Link</h3>
+                                      <h3>Uzmanlıklar</h3>
                                       <ul>
-                                          <li><a href="#">Politic</a></li>
-                                          <li><a href="#">Travel</a></li>
-                                          <li><a href="#">Study</a></li>
-                                          <li><a href="#">Country</a></li>
-                                          <li><a href="#">Sports</a></li>
+                                          <li><a routerLink="/yayinlar/hakaret/sayfa/1">Hakaret</a></li>
+                                          <li><a routerLink="/yayinlar/yaralama/sayfa/1">Yaralama</a></li>
+                                          <li><a routerLink="/yayinlar/orgutsuclari/sayfa/1">Örgüt Suçları</a></li>
+                                          <li><a routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1">Uyuşturucu Madde Suçları</a></li>
+                                          <li><a routerLink="/yayinlar/beyazyakalisuclari/sayfa/1">Beyaz Yakalı Suçları</a></li>
                                       </ul>
                                   </div>
                               </div>
+
                               <div class="col-xl-3 col-lg-3">
                                   <div class="footer-widget mb-30">
-                                      <h3>Most Visited</h3>
+                                      <h3>Site Haritası</h3>
                                       <ul>
-                                          <li><a href="#">Latest News </a></li>
-                                          <li><a href="#">Most Visited</a></li>
-                                          <li><a href="#">Recent News</a></li>
-                                          <li><a href="#">International</a></li>
-                                          <li><a href="#">Entertainment</a></li>
+                                          <li><a routerLink="/">Ana Sayfa</a></li>
+                                          <li><a href="#">Gizlilik Politikası</a></li>
+                                          <li><a href="#">Avukata Danışın</a></li>
+
                                       </ul>
                                   </div>
                               </div>
-                              <div class="col-xl-3 col-lg-3">
-                                  <div class="footer-widget mb-30">
-                                      <h3>About Us</h3>
-                                      <ul>
-                                          <li><a href="#">Feature</a></li>
-                                          <li><a href="#">About Us</a></li>
-                                          <li><a href="#">Life Style</a></li>
-                                          <li><a href="#">Economic</a></li>
-                                          <li><a href="#">Business</a></li>
-                                      </ul>
-                                  </div>
-                              </div>
-                              <div class="col-xl-3 col-lg-3">
-                                  <div class="footer-widget pt-50 mb-30">
-                                      <ul>
-                                          <li><a href="#"><i class="fas fa-video"></i> Video</a></li>
-                                          <li><a href="#"><i class="fas fa-camera-retro"></i> Picture</a></li>
-                                      </ul>
-                                  </div>
-                              </div>
+
                           </div>
                       </div>
                   </div>
@@ -245,7 +202,7 @@
               <div class="row">
                   <div class="col-12">
                       <div class="copyright text-center">
-                          <p>© Copyrights 2018. All rights reserved.</p>
+                          <p>© Ceza Avukatım 2018. Tüm Hakları Saklıdır.</p>
                       </div>
                   </div>
               </div>

@@ -12,7 +12,9 @@ import { MakalelerService } from '../makaleler.service';
 export class MakaledetayComponent implements OnInit {
   environment: {} = environment;
   makale: any;
-  
+
+  prevNextMakaleler: [];
+
   constructor(private router: ActivatedRoute, private makalelerService: MakalelerService) {}
 
   ngOnInit() {
@@ -22,6 +24,9 @@ export class MakaledetayComponent implements OnInit {
           this.makale = makale;
         });
     })
+    this.makalelerService.firstSixArticle.subscribe(res => {
+      this.prevNextMakaleler = res;
+    });
   }
 
 }

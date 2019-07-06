@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   uzmanliklarOpened: boolean = false;
   desktopSubState: boolean = false;
 
-  @HostListener('window:resize', ['$event']) handleResize(event) {
+  @HostListener('window:resize', ['$event']) handleResize() {
     if (window.innerWidth < 992) {
       this.navbarMobileOpen = false;
     } else {

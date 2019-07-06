@@ -36,17 +36,16 @@ export class MainmakalelerComponent implements OnInit {
           this.kategori = '';
         }
       }
-    })
 
-    this.makalelerService.getFourMakale(this.kategori, this.sayfa)
-      .subscribe(res => {
-        if (res['results']) {
-          this.fourMakale = res['results'];
-        } else {
-          this.fourMakale = res;
-        }
-        console.log(this.fourMakale);
-      });
+      this.makalelerService.getFourMakale(this.kategori, this.sayfa)
+        .subscribe(res => {
+          if (res['results']) {
+            this.fourMakale = res['results'];
+          } else {
+            this.fourMakale = res;
+          }
+        });
+    })
 
   }
 

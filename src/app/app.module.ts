@@ -10,13 +10,17 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { MainmakalelerComponent } from './mainmakaleler/mainmakaleler.component';
 import { MakaledetayComponent } from './makaledetay/makaledetay.component';
 
+import { convertHtmlToText } from './convertHtmlToText.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     MakalelerpageComponent,
     MainpageComponent,
     MainmakalelerComponent,
-    MakaledetayComponent
+    MakaledetayComponent,
+
+    convertHtmlToText
   ],
   imports: [
     BrowserModule,

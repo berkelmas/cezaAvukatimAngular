@@ -35,16 +35,16 @@
             <div *ngIf="iFirst === 2" class="col-lg-3 col-md-6">
                 <div class="hero pos-relative mb-30">
                     <div class="hero__thumb" data-overlay="dark-gradient">
-                        <a href="#">
+                        <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">
                             <img src="{{ environment.apiEndpoint + 'media/' + firstArticle.image297x400 }}" alt="hero image">
                         </a>
                     </div>
                     <div class="hero__text hero__text-small">
                         <span class="post-cat mb-10">
-                            <a href="#">{{ firstArticle.makale_kategori }}</a>
+                            <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">{{ firstArticle.makale_kategori }}</a>
                         </span>
                         <h3 class="pr-0">
-                            <a href="#">{{firstArticle.makale_baslik}}</a>
+                            <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">{{firstArticle.makale_baslik}}</a>
                         </h3>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
               <ng-container *ngFor="let uyusturucuItem of firstFourUyusturucumaddesuclari; let iUyusturucu = index">
                 <div *ngIf="iUyusturucu < 3" class="postbox mb-25">
                     <div class="postbox__thumb">
-                        <a href="#">
+                        <a [routerLink]="['/yayinlar/', uyusturucuItem.id, uyusturucuItem.makale_slug]">
                             <img src="{{ environment.apiEndpoint + 'media/' + uyusturucuItem.image240x160 }}" alt="hero image">
                         </a>
                     </div>
@@ -91,7 +91,7 @@
                             </ul>
                         </div>
                         <h4 class="pr-0">
-                            <a href="#">{{ uyusturucuItem.makale_baslik }}</a>
+                            <a [routerLink]="['/yayinlar/', uyusturucuItem.id, uyusturucuItem.makale_slug]">{{ uyusturucuItem.makale_baslik }}</a>
                         </h4>
                     </div>
                 </div>
@@ -109,8 +109,8 @@
               <ng-container *ngFor="let hakaretTwo of firstFourHakaret; let iHakaretTwo = index;">
                 <div *ngIf="iHakaretTwo < 2" class="postbox mb-25">
                     <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="{{ environment.apiEndpoint + 'media/' + hakaretTwo.image500x287 }}" alt="hero image">
+                        <a [routerLink]="['/yayinlar/', hakaretTwo.id, hakaretTwo.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + hakaretTwo.image500x287 }}" alt="{{ hakaretTwo.makale_baslik }}">
                         </a>
                         <span class="post-cat post-absolute">
                             <a href="#">{{ hakaretTwo.makale_kategori }}</a>
@@ -126,7 +126,7 @@
                             </ul>
                         </div>
                         <h4 class="title-16 pr-0">
-                            <a href="#">{{ hakaretTwo.makale_baslik }}</a>
+                            <a [routerLink]="['/yayinlar/', hakaretTwo.id, hakaretTwo.makale_slug]">{{ hakaretTwo.makale_baslik }}</a>
                         </h4>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
 
                 <div class="post__small mb-30">
                     <div class="post__small-thumb f-left">
-                        <a href="#">
+                        <a [routerLink]="['/yayinlar/', smallItem.id, smallItem.makale_slug]">
                             <img src="{{ environment.apiEndpoint + 'media/' + smallItem.image100x85 }}" alt="hero image">
                         </a>
                     </div>
@@ -150,7 +150,7 @@
                             <a href="#">{{ smallItem.makale_kategori }}</a>
                         </span>
                         <h4 class="title-13 pr-0">
-                            <a href="#">{{ smallItem.makale_baslik }}</a>
+                            <a [routerLink]="['/yayinlar/', smallItem.id, smallItem.makale_slug]">{{ smallItem.makale_baslik }}</a>
                         </h4>
                         <div class="post__small-text-meta">
                             <ul>
@@ -165,7 +165,7 @@
               </ng-container>
 
                 <div class="post-btn mb-30">
-                   <a href="#" class="btn btn-border">Tüm Yayınlar</a>
+                   <a routerLink="/yayinlar" class="btn btn-border">Tüm Yayınlar</a>
                 </div>
 
             </div>
@@ -176,8 +176,8 @@
               <ng-container *ngFor="let beyazYakaliItem of firstFourBeyazyakalisuclari; let iBeyaz = index;">
                 <div *ngIf="iBeyaz < 3" class="postbox mb-25">
                     <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="{{ environment.apiEndpoint + 'media/' + beyazYakaliItem.image240x160 }}" alt="hero image">
+                        <a [routerLink]="['/yayinlar/', beyazYakaliItem.id, beyazYakaliItem.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + beyazYakaliItem.image240x160 }}" alt="{{ beyazYakaliItem.makale_baslik }}">
                         </a>
                     </div>
                     <div class="postbox__text pt-10">
@@ -190,7 +190,7 @@
                             </ul>
                         </div>
                         <h4 class="pr-0">
-                            <a href="#">{{ beyazYakaliItem.makale_baslik }}</a>
+                            <a [routerLink]="['/yayinlar/', beyazYakaliItem.id, beyazYakaliItem.makale_slug]">{{ beyazYakaliItem.makale_baslik }}</a>
                         </h4>
                     </div>
                 </div>
@@ -217,13 +217,13 @@
                 <ng-container *ngFor="let hakaretItem of firstFourHakaret; let hIndex = index;">
                   <div *ngIf="hIndex === 0" class="postbox mb-25">
                       <div class="postbox__thumb">
-                          <a href="#">
-                              <img src="{{ environment.apiEndpoint + 'media/' + hakaretItem.image500x287 }}" alt="hero image">
+                          <a [routerLink]="['/yayinlar/', hakaretItem.id, hakaretItem.makale_slug]">
+                              <img src="{{ environment.apiEndpoint + 'media/' + hakaretItem.image500x287 }}" alt="{{ hakaretItem.makale_baslik }}">
                           </a>
                       </div>
                       <div class="postbox__text pt-20">
                           <h4 class="title-18 pr-0">
-                              <a href="#">{{hakaretItem.makale_baslik}}</a>
+                              <a [routerLink]="['/yayinlar/', hakaretItem.id, hakaretItem.makale_slug]">{{hakaretItem.makale_baslik}}</a>
                           </h4>
                           <div class="postbox__text-meta pb-10">
                               <ul>
@@ -243,13 +243,13 @@
                   <ng-container *ngFor="let hItemSmall of firstFourHakaret; let hIndexSmall = index;">
                     <div *ngIf="hIndexSmall < 3 && hIndexSmall > 0" class="post__small mb-30">
                         <div class="post__small-thumb f-left">
-                            <a href="#">
-                                <img src="{{environment.apiEndpoint + 'media/' + hItemSmall.image100x85}}" alt="hero image">
+                            <a [routerLink]="['/yayinlar/', hItemSmall.id, hItemSmall.makale_slug]">
+                                <img src="{{environment.apiEndpoint + 'media/' + hItemSmall.image100x85}}" alt="{{ hItemSmall.makale_baslik }}">
                             </a>
                         </div>
                         <div class="post__small-text fix pl-10">
                             <h4 class="title-16 pr-0 mt-0">
-                                <a href="#">{{hItemSmall.makale_baslik}}</a>
+                                <a [routerLink]="['/yayinlar/', hItemSmall.id, hItemSmall.makale_slug]">{{hItemSmall.makale_baslik}}</a>
                             </h4>
                             <div class="post__small-text-meta">
                                 <ul>
@@ -278,13 +278,13 @@
 
                 <div class="postbox mb-25" *ngIf="yIndex === 0">
                     <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="{{ environment.apiEndpoint + 'media/' + yaralamaItem.image500x287 }}" alt="hero image">
+                        <a [routerLink]="['/yayinlar/', yaralamaItem.id, yaralamaItem.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + yaralamaItem.image500x287 }}" alt="{{ yaralamaItem.makale_baslik }}">
                         </a>
                     </div>
                     <div class="postbox__text pt-20">
                         <h4 class="title-18 pr-0">
-                            <a href="#">{{yaralamaItem.makale_baslik}}</a>
+                            <a [routerLink]="['/yayinlar/', yaralamaItem.id, yaralamaItem.makale_slug]">{{yaralamaItem.makale_baslik}}</a>
                         </h4>
                         <div class="postbox__text-meta pb-10">
                             <ul>
@@ -302,13 +302,13 @@
 
                     <div *ngIf="yIndex > 0 && yIndex < 3" class="post__small mb-30">
                         <div class="post__small-thumb f-left">
-                            <a href="#">
-                                <img src="{{ environment.apiEndpoint + 'media/' + yaralamaItem.image100x85 }}" alt="hero image">
+                            <a [routerLink]="['/yayinlar/', yaralamaItem.id, yaralamaItem.makale_slug]">
+                                <img src="{{ environment.apiEndpoint + 'media/' + yaralamaItem.image100x85 }}" alt="{{ yaralamaItem.makale_baslik }}">
                             </a>
                         </div>
                         <div class="post__small-text fix pl-10">
                             <h4 class="title-16 pr-0 mt-0">
-                                <a href="#">{{ yaralamaItem.makale_baslik }}</a>
+                                <a [routerLink]="['/yayinlar/', yaralamaItem.id, yaralamaItem.makale_slug]">{{ yaralamaItem.makale_baslik }}</a>
                             </h4>
                             <div class="post__small-text-meta">
                                 <ul>
@@ -339,13 +339,13 @@
 
                 <div *ngIf="iOrgut === 0" class="postbox mb-25">
                     <div class="postbox__thumb">
-                        <a href="#">
-                            <img src="{{ environment.apiEndpoint + 'media/' + orgutItem.image500x287 }}" alt="hero image">
+                        <a [routerLink]="['/yayinlar/', orgutItem.id, orgutItem.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + orgutItem.image500x287 }}" alt="{{ orgutItem.makale_baslik }}">
                         </a>
                     </div>
                     <div class="postbox__text pt-20">
                         <h4 class="title-18 pr-0">
-                            <a href="#">{{ orgutItem.makale_baslik }}</a>
+                            <a [routerLink]="['/yayinlar/', orgutItem.id, orgutItem.makale_slug]">{{ orgutItem.makale_baslik }}</a>
                         </h4>
                         <div class="postbox__text-meta pb-10">
                             <ul>
@@ -363,13 +363,13 @@
 
                   <div *ngIf="iOrgut > 0 && iOrgut < 3" class="post__small mb-30">
                       <div class="post__small-thumb f-left">
-                          <a href="#">
-                              <img src="{{ environment.apiEndpoint + 'media/' + orgutItem.image100x85 }}" alt="hero image">
+                          <a [routerLink]="['/yayinlar/', orgutItem.id, orgutItem.makale_slug]">
+                              <img src="{{ environment.apiEndpoint + 'media/' + orgutItem.image100x85 }}" alt="{{ orgutItem.makale_baslik }}">
                           </a>
                       </div>
                       <div class="post__small-text fix pl-10">
                           <h4 class="title-16 pr-0 mt-0">
-                              <a href="#">{{ orgutItem.makale_baslik }}</a>
+                              <a [routerLink]="['/yayinlar/', orgutItem.id, orgutItem.makale_slug]">{{ orgutItem.makale_baslik }}</a>
                           </h4>
                           <div class="post__small-text-meta">
                               <ul>

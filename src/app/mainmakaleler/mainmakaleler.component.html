@@ -1,144 +1,41 @@
-<div class="postbox mb-40">
-    <div class="postbox__thumb mb-25">
-        <a href="#">
-            <img src="assets/img/blog/blog-standard/blog-full1.jpg" alt="hero image">
-        </a>
-    </div>
-    <div class="postbox__text">
-        <div class="postbox__text-meta pb-20">
-            <ul>
-                <li>
-                    <span class="post-cat">
-                        <a href="#" tabindex="0">lifestyle</a>
-                    </span>
-                </li>
-                <li>
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>01 Sep 2018</span>
-                </li>
-                <li>
-                    <i class="far fa-comment"></i>
-                    <span>(03)</span>
-                </li>
-            </ul>
-        </div>
-        <h4 class="title-30 font-600 pr-0">
-            <a routerLink="/yayinlar/makaledetay">Women just broke a record: The mosfemale nominees for governor single mistaken.</a>
-        </h4>
-        <div class="desc-text mb-20">
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you
-            a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder
-            of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure,</p>
-        </div>
-        <a href="#" class="read-more">read more</a>
-    </div>
-</div>
-<div class="postbox mb-40">
-    <div class="postbox__thumb mb-25">
-        <a href="#">
-            <img src="assets/img/blog/blog-standard/blog-full2.jpg" alt="hero image">
-        </a>
-    </div>
-    <div class="postbox__text">
-        <div class="postbox__text-meta pb-20">
-            <ul>
-                <li>
-                    <span class="post-cat">
-                        <a href="#" tabindex="0">lifestyle</a>
-                    </span>
-                </li>
-                <li>
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>01 Sep 2018</span>
-                </li>
-                <li>
-                    <i class="far fa-comment"></i>
-                    <span>(03)</span>
-                </li>
-            </ul>
-        </div>
-        <h4 class="title-30 font-600 pr-0">
-            <a href="#">The most bizarre thing I’ve ever been a part panel found no widespread voter frae.</a>
-        </h4>
-        <div class="desc-text mb-20">
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you
-            a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder
-            of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure,</p>
-        </div>
-        <a href="#" class="read-more">read more</a>
-    </div>
-</div>
-<div class="postbox mb-40">
-    <div class="postbox__thumb mb-25">
-        <a href="#">
-            <img src="assets/img/blog/blog-standard/blog-full3.jpg" alt="hero image">
-        </a>
-    </div>
-    <div class="postbox__text">
-        <div class="postbox__text-meta pb-20">
-            <ul>
-                <li>
-                    <span class="post-cat">
-                        <a href="#" tabindex="0">lifestyle</a>
-                    </span>
-                </li>
-                <li>
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>01 Sep 2018</span>
-                </li>
-                <li>
-                    <i class="far fa-comment"></i>
-                    <span>(03)</span>
-                </li>
-            </ul>
-        </div>
-        <h4 class="title-30 font-600 pr-0">
-            <a href="#">Women just broke a record: The mosfemale nominees for governor single mistaken.</a>
-        </h4>
-        <div class="desc-text mb-20">
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you
-            a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder
-            of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure,</p>
-        </div>
-        <a href="#" class="read-more">read more</a>
-    </div>
-</div>
-<div class="postbox mb-40">
-    <div class="postbox__thumb mb-25">
-        <a href="#">
-            <img src="assets/img/blog/blog-standard/blog-full4.jpg" alt="hero image">
-        </a>
-    </div>
-    <div class="postbox__text">
-        <div class="postbox__text-meta pb-20">
-            <ul>
-                <li>
-                    <span class="post-cat">
-                        <a href="#" tabindex="0">lifestyle</a>
-                    </span>
-                </li>
-                <li>
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>01 Sep 2018</span>
-                </li>
-                <li>
-                    <i class="far fa-comment"></i>
-                    <span>(03)</span>
-                </li>
-            </ul>
-        </div>
-        <h4 class="title-30 font-600 pr-0">
-            <a href="#">Women just broke a record: The mosfemale nominees for governor single mistaken.</a>
-        </h4>
-        <div class="desc-text mb-20">
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you
-            a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder
-            of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure,</p>
-        </div>
-        <a href="#" class="read-more">read more</a>
-    </div>
-</div>
 
+
+  <div *ngFor="let makale of fourMakale; let iMakale = index;" class="postbox mb-40">
+      <div class="postbox__thumb mb-25">
+          <a [routerLink]="['/yayinlar/', makale.id, makale.makale_slug]">
+              <img src="{{ environment.apiEndpoint + 'media/' + makale.image625x400 }}" alt="hero image">
+          </a>
+      </div>
+      <div class="postbox__text">
+          <div class="postbox__text-meta pb-20">
+              <ul>
+                  <li>
+                      <span class="post-cat">
+                          <a [routerLink]="['/yayinlar/', makale.makale_kategori_nondisplay, 'sayfa', 1]">{{ makale.makale_kategori }}</a>
+                      </span>
+                  </li>
+                  <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <span>{{ makale.makale_yayintarihi }}</span>
+                  </li>
+              </ul>
+          </div>
+          <h4 class="title-30 font-600 pr-0">
+              <a [routerLink]="['/yayinlar/', makale.id, makale.makale_slug]">{{ makale.makale_baslik }}</a>
+          </h4>
+          <div class="desc-text mb-20">
+              <div [innerHTML]="makale.makale_mesaj | convertHtmlToText | slice:0:600"></div>
+
+          </div>
+          <a [routerLink]="['/yayinlar/', makale.id, makale.makale_slug]" class="read-more">Daha Fazlası</a>
+      </div>
+  </div>
+
+
+
+
+
+<!-- Here is pagination... -->
 <div class="row mt-10">
     <div class="col-xl-12">
         <div class="pagination">
