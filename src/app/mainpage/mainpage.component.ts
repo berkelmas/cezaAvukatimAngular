@@ -9,9 +9,12 @@ import { environment } from '../../environments/environment';
 })
 export class MainpageComponent implements OnInit {
   firstSixArticle: any;
+
   firstFourYaralama: any;
   firstFourBeyazyakalisuclari: any;
-  FirstFourHakaret: any;
+  firstFourHakaret: any;
+  firstFourUyusturucumaddesuclari: any;
+  firstFourOrgutsuclari: any;
 
   environment: {} = environment;
 
@@ -19,9 +22,12 @@ export class MainpageComponent implements OnInit {
 
   ngOnInit() {
     this.makalelerService.firstSixArticle.subscribe(res => this.firstSixArticle = res);
-    this.makalelerService.firstFourUyusturucumaddesuclari.subscribe(res => this.firstFourYaralama = res);
+
+    this.makalelerService.firstFourUyusturucumaddesuclari.subscribe(res => this.firstFourUyusturucumaddesuclari = res);
     this.makalelerService.firstFourBeyazyakalisuclari.subscribe(res => this.firstFourBeyazyakalisuclari = res);
-    this.makalelerService.FirstFourHakaret.subscribe(res => this.FirstFourHakaret = res);
+    this.makalelerService.FirstFourHakaret.subscribe(res => this.firstFourHakaret = res);
+    this.makalelerService.firstFourYaralama.subscribe(res => this.firstFourYaralama = res);
+    this.makalelerService.firstFourOrgutsuclari.subscribe(res => this.firstFourOrgutsuclari = res);
   }
 
 }

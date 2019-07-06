@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { MakalelerService } from '../makaleler.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-makalelerpage',
@@ -8,10 +8,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./makalelerpage.component.scss']
 })
 export class MakalelerpageComponent implements OnInit {
+  firstSixArticle: any;
+  environment: {} = environment;
 
-  constructor() { }
+  constructor(private makalelerService: MakalelerService) { }
 
   ngOnInit() {
+    this.makalelerService.firstSixArticle.subscribe(res => this.firstSixArticle = res);
   }
 
 

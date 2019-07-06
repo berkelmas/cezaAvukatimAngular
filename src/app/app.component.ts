@@ -58,6 +58,12 @@ export class AppComponent implements OnInit {
 
     this.makalelerService.getFirstFourHakaret()
       .subscribe(res => this.makalelerService.FirstFourHakaret.next(res['results']));
+
+    this.makalelerService.getFirstFourYaralama()
+      .subscribe(res => this.makalelerService.firstFourYaralama.next(res['results']));
+
+    this.makalelerService.getFirstFourOrgutsuclari()
+      .subscribe(res => this.makalelerService.firstFourOrgutsuclari.next(res['results']));
   }
 
 

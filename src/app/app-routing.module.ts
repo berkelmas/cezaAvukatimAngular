@@ -11,7 +11,8 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', component: MainpageComponent, data: { animation: 'heroes' } },
   {path: 'yayinlar', component: MakalelerpageComponent, children: [
     {path: '', component: MainmakalelerComponent},
-    {path: 'makaledetay', component: MakaledetayComponent}
+    {path: ':kategori', component: MainmakalelerComponent},
+    {path: ':id/:makaleslug', component: MakaledetayComponent}
   ], data: { animation: 'hero' }}
 ];
 

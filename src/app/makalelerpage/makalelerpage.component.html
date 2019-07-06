@@ -17,119 +17,58 @@
             <div class="col-xl-4 col-lg-4 col-md-12">
 
                 <div class="widget widget-border mb-40">
-                    <h3 class="widget-title">Popular posts</h3>
-                    <div class="post__small mb-30">
+                    <h3 class="widget-title">Cezada Popüler</h3>
+
+                  <ng-container *ngFor="let popularPost of firstSixArticle; let popIndex = index;">
+                    <div *ngIf="popIndex < 4" class="post__small mb-30">
                         <div class="post__small-thumb f-left">
                             <a href="#">
-                                <img src="assets/img/trendy/xs/xs-1.jpg" alt="hero image">
+                                <img src="{{ environment.apiEndpoint + 'media/' + popularPost.image100x85 }}" alt="hero image">
                             </a>
                         </div>
                         <div class="post__small-text fix pl-10">
                             <span class="sm-cat">
-                                <a href="#">Fashion</a>
+                                <a href="#">{{ popularPost.makale_kategori }}</a>
                             </span>
                             <h4 class="title-13 pr-0">
-                                <a href="#">Husar asks expenses authority to entitlements after Bruno</a>
+                                <a href="#">{{ popularPost.makale_baslik }}</a>
                             </h4>
                             <div class="post__small-text-meta">
                                 <ul>
                                     <li>
                                         <i class="fas fa-calendar-alt"></i>
-                                        <span>01 Sep 2018</span>
+                                        <span>{{ popularPost.makale_yayintarihi }}</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="post__small mb-30">
-                        <div class="post__small-thumb f-left">
-                            <a href="#">
-                                <img src="assets/img/trendy/xs/xs-2.jpg" alt="hero image">
-                            </a>
-                        </div>
-                        <div class="post__small-text fix pl-10">
-                            <span class="sm-cat">
-                                <a href="#">Fashion</a>
-                            </span>
-                            <h4 class="title-13 pr-0">
-                                <a href="#">Researchers claim majo throug in the fight to cure fibrosis</a>
-                            </h4>
-                            <div class="post__small-text-meta">
-                                <ul>
-                                    <li>
-                                        <i class="fas fa-calendar-alt"></i>
-                                        <span>01 Sep 2018</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post__small mb-30">
-                        <div class="post__small-thumb f-left">
-                            <a href="#">
-                                <img src="assets/img/trendy/xs/xs-3.jpg" alt="hero image">
-                            </a>
-                        </div>
-                        <div class="post__small-text fix pl-10">
-                            <span class="sm-cat">
-                                <a href="#">Fashion</a>
-                            </span>
-                            <h4 class="title-13 pr-0">
-                                <a href="#">Nahan downplays Liberal lership tensions after white ant</a>
-                            </h4>
-                            <div class="post__small-text-meta">
-                                <ul>
-                                    <li>
-                                        <i class="fas fa-calendar-alt"></i>
-                                        <span>01 Sep 2018</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post__small">
-                        <div class="post__small-thumb f-left">
-                            <a href="#">
-                                <img src="assets/img/trendy/xs/xs-4.jpg" alt="hero image">
-                            </a>
-                        </div>
-                        <div class="post__small-text fix pl-10">
-                            <span class="sm-cat">
-                                <a href="#">Travel</a>
-                            </span>
-                            <h4 class="title-13 pr-0">
-                                <a href="#">Farmers plead for bullets to put down emaciated stock</a>
-                            </h4>
-                            <div class="post__small-text-meta">
-                                <ul>
-                                    <li>
-                                        <i class="fas fa-calendar-alt"></i>
-                                        <span>01 Sep 2018</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                  </ng-container>
+
+
                 </div>
 
                 <div class="widget widget-border mb-40">
                     <h3 class="widget-title">Categories</h3>
                     <ul>
-                        <li><a href="#">Business <span>02</span></a></li>
-                        <li><a href="#">Politic <span>05</span></a></li>
-                        <li><a href="#">Fashion <span>01</span></a></li>
-                        <li><a href="#">Corporate <span>03</span></a></li>
-                        <li><a href="#">Football <span>07</span></a></li>
-                        <li><a href="#">Magazine <span>06</span></a></li>
+                        <li><a href="#">Business </a></li>
+                        <li><a href="#">Politic </a></li>
+                        <li><a href="#">Fashion </a></li>
+                        <li><a href="#">Corporate </a></li>
+                        <li><a href="#">Football </a></li>
+                        <li><a href="#">Magazine </a></li>
                     </ul>
                 </div>
 
+
                 <div class="widget widget-border mb-40">
-                    <h3 class="widget-title">Most visited</h3>
+                    <h3 class="widget-title">En Çok İlgi Çeken</h3>
+
+                  <ng-container *ngIf="firstSixArticle[5]">
                     <div class="postbox">
                         <div class="postbox__thumb">
                             <a href="#">
-                                <img src="assets/img/details/sidebar-post.jpg" alt="hero image">
+                                <img src="{{ environment.apiEndpoint + 'media/' + firstSixArticle[5].image500x287 }}" alt="hero image">
                             </a>
                         </div>
                         <div class="postbox__text pt-15">
@@ -137,19 +76,17 @@
                                 <ul>
                                     <li>
                                         <i class="fas fa-calendar-alt"></i>
-                                        <span>01 Sep 2018</span>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-comment"></i>
-                                        <span>(03)</span>
+                                        <span>{{ firstSixArticle[5].makale_yayintarihi }}</span>
                                     </li>
                                 </ul>
                             </div>
                             <h4 class="title-16 pr-0">
-                                <a href="#">Paul Manafort’s Accountant Testifies She Helped Alter Financial Documents</a>
+                                <a [routerLink]="['/yayinlar/', firstSixArticle[5].id, firstSixArticle[5].makale_slug ]">{{ firstSixArticle[5].makale_baslik }}</a>
                             </h4>
                         </div>
                     </div>
+                  </ng-container>
+
                 </div>
 
             </div>
