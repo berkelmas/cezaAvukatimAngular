@@ -22,16 +22,16 @@
                   <ng-container *ngFor="let popularPost of firstSixArticle; let popIndex = index;">
                     <div *ngIf="popIndex < 4" class="post__small mb-30">
                         <div class="post__small-thumb f-left">
-                            <a href="#">
-                                <img src="{{ environment.apiEndpoint + 'media/' + popularPost.image100x85 }}" alt="hero image">
+                            <a [routerLink]="['/yayinlar', popularPost.id, popularPost.makale_slug]">
+                                <img src="{{ environment.apiEndpoint + 'media/' + popularPost.image100x85 }}" alt="{{ popularPost.makale_baslik }}">
                             </a>
                         </div>
                         <div class="post__small-text fix pl-10">
                             <span class="sm-cat">
-                                <a href="#">{{ popularPost.makale_kategori }}</a>
+                                <a [routerLink]="['/yayinlar', popularPost.makale_kategori_nondisplay, 'sayfa', 1]">{{ popularPost.makale_kategori }}</a>
                             </span>
                             <h4 class="title-13 pr-0">
-                                <a href="#">{{ popularPost.makale_baslik }}</a>
+                                <a [routerLink]="['/yayinlar', popularPost.id, popularPost.makale_slug]">{{ popularPost.makale_baslik }}</a>
                             </h4>
                             <div class="post__small-text-meta">
                                 <ul>
@@ -66,8 +66,8 @@
                   <ng-container *ngIf="firstSixArticle[5]">
                     <div class="postbox">
                         <div class="postbox__thumb">
-                            <a href="#">
-                                <img src="{{ environment.apiEndpoint + 'media/' + firstSixArticle[5].image500x287 }}" alt="hero image">
+                            <a [routerLink]="['/yayinlar', firstSixArticle[5].id, firstSixArticle[5].makale_slug]">
+                                <img src="{{ environment.apiEndpoint + 'media/' + firstSixArticle[5].image500x287 }}" alt="{{ firstSixArticle[5].makale_baslik }}">
                             </a>
                         </div>
                         <div class="postbox__text pt-15">
