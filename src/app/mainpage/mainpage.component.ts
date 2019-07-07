@@ -23,11 +23,11 @@ export class MainpageComponent implements OnInit {
   ngOnInit() {
     this.makalelerService.firstSixArticle.subscribe(res => this.firstSixArticle = res);
 
-    this.makalelerService.firstFourUyusturucumaddesuclari.subscribe(res => this.firstFourUyusturucumaddesuclari = res);
-    this.makalelerService.firstFourBeyazyakalisuclari.subscribe(res => this.firstFourBeyazyakalisuclari = res);
-    this.makalelerService.FirstFourHakaret.subscribe(res => this.firstFourHakaret = res);
-    this.makalelerService.firstFourYaralama.subscribe(res => this.firstFourYaralama = res);
-    this.makalelerService.firstFourOrgutsuclari.subscribe(res => this.firstFourOrgutsuclari = res);
+    this.makalelerService.firstFourUyusturucumaddesuclari.subscribe(res => this.firstFourUyusturucumaddesuclari = res['results']);
+    this.makalelerService.firstFourBeyazyakalisuclari.subscribe(res => this.firstFourBeyazyakalisuclari = res['results']);
+    this.makalelerService.FirstFourHakaret.subscribe(res => this.firstFourHakaret = res['results']);
+    this.makalelerService.firstFourYaralama.subscribe(res => this.firstFourYaralama = res['results']);
+    this.makalelerService.firstFourOrgutsuclari.subscribe(res => this.firstFourOrgutsuclari = res['results']);
   }
 
 }

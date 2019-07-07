@@ -36,27 +36,40 @@
 
 
 <!-- Here is pagination... -->
-<div *ngIf="kategori" class="row mt-10">
+
+
+<!-- Here is without category page... -->
+<div *ngIf="!kategori" class="row mt-10">
     <div class="col-xl-12">
         <div class="pagination">
             <ul>
 
-                <li>
-                    <a href="#">Prev</a>
-                </li>
-
-
-                <li class="active">
-                    <a href="#">
-                        <span>1</span>
+              <ng-container *ngFor="let page of sayfaCountArray; let pageIndex = index;">
+                <li [class.active]="sayfa === (pageIndex + 1)">
+                    <a [routerLink]="['/yayinlar', (pageIndex + 1)]">
+                        <span>{{pageIndex + 1}}</span>
                     </a>
                 </li>
+              </ng-container>
+
+            </ul>
+        </div>
+    </div>
+</div>
 
 
-
-                <li>
-                    <a href="#">Next</a>
+<!-- Here is with category page... -->
+<div *ngIf="kategori" class="row mt-10">
+    <div class="col-xl-12">
+        <div class="pagination">
+            <ul>
+              <ng-container *ngFor="let page of sayfaCountArray; let pageIndex = index;">
+                <li [class.active]="page === (pageIndex + 1)">
+                    <a [routerLink]="['/yayinlar', kategori, 'sayfa', (pageIndex + 1)]">
+                        <span>{{ pageIndex + 1 }}</span>
+                    </a>
                 </li>
+              </ng-container>
 
             </ul>
         </div>

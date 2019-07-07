@@ -13,6 +13,9 @@ export class MainmakalelerComponent implements OnInit {
   sayfa: number;
   kategori: string;
 
+  sayfaCount: number;
+  sayfaCountArray: any;
+
   constructor(private makalelerService: MakalelerService, private router: ActivatedRoute) {}
 
   fourMakale: any;
@@ -41,9 +44,10 @@ export class MainmakalelerComponent implements OnInit {
         .subscribe(res => {
           if (res['results']) {
             this.fourMakale = res['results'];
-          } else {
-            this.fourMakale = res;
+            this.sayfaCount = res['totalpages'];
+            this.sayfaCountArray = Array(this.sayfaCount);
           }
+
         });
     })
 

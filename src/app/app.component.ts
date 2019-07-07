@@ -67,19 +67,19 @@ export class AppComponent implements OnInit {
       .subscribe(res => this.makalelerService.firstSixArticle.next(res['results']) );
 
     this.makalelerService.getFirstFourUyusturucumaddesuclari()
-    .subscribe(res => this.makalelerService.firstFourUyusturucumaddesuclari.next(res['results']));
+    .subscribe(res => this.makalelerService.firstFourUyusturucumaddesuclari.next(res));
 
     this.makalelerService.getFirstFourBeyazyakalisuclari()
-      .subscribe(res => this.makalelerService.firstFourBeyazyakalisuclari.next(res['results']));
+      .subscribe(res => this.makalelerService.firstFourBeyazyakalisuclari.next(res));
 
     this.makalelerService.getFirstFourHakaret()
-      .subscribe(res => this.makalelerService.FirstFourHakaret.next(res['results']));
+      .subscribe(res => this.makalelerService.FirstFourHakaret.next(res));
 
     this.makalelerService.getFirstFourYaralama()
-      .subscribe(res => this.makalelerService.firstFourYaralama.next(res['results']));
+      .subscribe(res => this.makalelerService.firstFourYaralama.next(res));
 
     this.makalelerService.getFirstFourOrgutsuclari()
-      .subscribe(res => this.makalelerService.firstFourOrgutsuclari.next(res['results']));
+      .subscribe(res => this.makalelerService.firstFourOrgutsuclari.next(res));
   }
 
 
