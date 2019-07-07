@@ -6,9 +6,11 @@ import {
   transition
 } from '@angular/animations';
 
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 import { MakalelerService } from './makaleler.service';
+import { ContactService } from './contact.service';
 
 
 @Component({
@@ -19,6 +21,10 @@ import { MakalelerService } from './makaleler.service';
     trigger('mobileMenuAnimation', [
       transition('void => displayMobileMenu', [style({height: 0, transform: 'scaleY(0)', opacity: 0}), animate('500ms')]),
       transition('displayMobileMenu => void', animate('500ms ease-out', style({height: 0, opacity: 0, transform: 'scaleY(0)'})))
+    ]),
+    trigger('emailSubAnimation', [
+      transition('void => displaySubsMessage', [style({transform: 'translateY(-100%)', opacity: 0}), animate('500ms ease-in')]),
+      transition('displaySubsMessage => void', animate('500ms ease-out', style({opacity: 0, transform : 'translateY(-100%)'})))
     ])
   ]
 })
@@ -28,6 +34,9 @@ export class AppComponent implements OnInit {
 
   uzmanliklarOpened: boolean = false;
   desktopSubState: boolean = false;
+
+  sentContactSuccess: boolean = false;
+  sentContactFailed: boolean = false;
 
   @HostListener('window:resize', ['$event']) handleResize() {
 
@@ -42,7 +51,7 @@ export class AppComponent implements OnInit {
 
   }
 
-  constructor(private makalelerService: MakalelerService, @Inject(PLATFORM_ID) private platformId: any) {}
+  constructor(private contactService: ContactService ,private makalelerService: MakalelerService, @Inject(PLATFORM_ID) private platformId: any) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -52,7 +61,7 @@ export class AppComponent implements OnInit {
         this.navbarMobileOpen = true;
       }
     }
-    
+
     // Get first Articles at first.
     this.makalelerService.getFirstSixArticle()
       .subscribe(res => this.makalelerService.firstSixArticle.next(res['results']) );
@@ -81,6 +90,32 @@ export class AppComponent implements OnInit {
 
   changeUzmanliklarSubMenu() {
     this.uzmanliklarOpened = !this.uzmanliklarOpened;
+  }
+
+  handleSubmit(f: NgForm) {
+    const result = f.value;
+    if (result.email === '') {
+      return;
+    }
+    this.contactService.sendContactData(result.email)
+      .subscribe(
+        res => {
+          f.reset();
+          this.sentContactSuccess = true;
+          setTimeout(() => {
+            this.sentContactSuccess = false;
+          }, 2000);
+          console.log(res);
+        },
+        err => {
+          f.reset();
+          this.sentContactFailed = true;
+          setTimeout(() => {
+            this.sentContactFailed = false;
+          }, 2000)
+          console.log(err)
+        }
+      );
   }
 
 }

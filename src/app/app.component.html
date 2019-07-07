@@ -1,5 +1,15 @@
 
 <div class="main-body-main">
+
+
+    <div [@emailSubAnimation]="'displaySubsMessage'" *ngIf="sentContactSuccess" class="sticky-message-correct">
+      <p style="font-size: 20px; color: #f7f7f8">Bültene Abone Olundu.</p>
+    </div>
+
+    <div [@emailSubAnimation]="'displaySubsMessage'" *ngIf="sentContactFailed" class="sticky-message-false">
+      <p style="font-size: 20px; color: #f7f7f8;">Abonelik İşlemi Başarısız.</p>
+    </div>
+
   <div class="main-body">
     <!-- header start -->
     <header class="header">
@@ -16,7 +26,7 @@
                                     <a routerLink="/yayinlar">Yayınlar</a>
                                 </li>
                                 <li>
-                                    <a href="#">Gizlilik Politikası</a>
+                                    <a routerLink="/gizlilik-politikasi">Gizlilik Politikası</a>
                                 </li>
                             </ul>
                         </div>
@@ -57,7 +67,7 @@
                             <nav id="mobile-menu" [ngClass]="{'no-display' : !navbarMobileOpen}">
                                 <ul>
                                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="/">Ana Sayfa</a></li>
-                                    <li><a href="tech.html">Avukata Danışın</a></li>
+                                    <li routerLinkActive="active"><a routerLink="/avukata-danisin">Avukata Danışın</a></li>
                                     <li routerLinkActive="active"><a routerLink="/yayinlar/hakaret/sayfa/1">Hakaret</a></li>
                                     <li routerLinkActive="active"><a routerLink="/yayinlar/yaralama/sayfa/1">Yaralama</a></li>
                                     <li routerLinkActive="active"><a routerLink="/yayinlar/orgutsuclari/sayfa/1">Örgüt Suçları</a></li>
@@ -138,8 +148,8 @@
                                 </div>
                                 <div class="col-xl-5 col-lg-5">
                                     <div class="subscribe-form mb-30">
-                                        <form action="#">
-                                            <input type="email" placeholder="Enter your email">
+                                        <form #f="ngForm" (submit)="handleSubmit(f)">
+                                            <input ngModel name="email" type="email" placeholder="Enter your email">
                                             <button type="submit">
                                                 Abone Ol
                                             </button>
@@ -157,11 +167,8 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="footer-widget mb-30">
-                            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising
-                                pain was born and I will give you
-                                a complete account of the system, and expound the actual teachings of the great explorer of
-                                the truth, the master-builder
-                                of human happiness.</p>
+                            <p>Cezaavukatim.com sanık,mağdur,katılan,ihbar eden ve şikayetçi gibi tarafların aralarındaki uyuşmazlıklarda öldürme,yaralama,hakaret,bilişim,hırsızlık,
+örgüt suçları ve yasak madde kullanımı gibi ceza hukukunun uzmanlık gerektiren alanlarında size destek oluyoruz.</p>
 
                         </div>
                     </div>
@@ -186,8 +193,8 @@
                                         <h3>Site Haritası</h3>
                                         <ul>
                                             <li><a routerLink="/">Ana Sayfa</a></li>
-                                            <li><a href="#">Gizlilik Politikası</a></li>
-                                            <li><a href="#">Avukata Danışın</a></li>
+                                            <li><a routerLink="/gizlilik-politikasi">Gizlilik Politikası</a></li>
+                                            <li><a routerLink="/avukata-danisin">Avukata Danışın</a></li>
 
                                         </ul>
                                     </div>

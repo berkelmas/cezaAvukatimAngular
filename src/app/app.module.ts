@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { MainmakalelerComponent } from './mainmakaleler/mainmakaleler.component'
 import { MakaledetayComponent } from './makaledetay/makaledetay.component';
 
 import { convertHtmlToText } from './convertHtmlToText.pipe';
+import { GizlilikpageComponent } from './gizlilikpage/gizlilikpage.component';
+import { AvukatadanisinpageComponent } from './avukatadanisinpage/avukatadanisinpage.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,18 @@ import { convertHtmlToText } from './convertHtmlToText.pipe';
     MainmakalelerComponent,
     MakaledetayComponent,
 
-    convertHtmlToText
+    convertHtmlToText,
+
+    GizlilikpageComponent,
+
+    AvukatadanisinpageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'cezaavukatimid'}),
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
