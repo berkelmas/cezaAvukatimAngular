@@ -1,10 +1,12 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import {
   trigger,
   style,
   animate,
   transition
 } from '@angular/animations';
+
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 import { MakalelerService } from './makaleler.service';
 
@@ -28,24 +30,29 @@ export class AppComponent implements OnInit {
   desktopSubState: boolean = false;
 
   @HostListener('window:resize', ['$event']) handleResize() {
-    if (window.innerWidth < 992) {
-      this.navbarMobileOpen = false;
-    } else {
-      this.navbarMobileOpen = true;
-      this.mobileMenuOpen = false;
+
+    if (isPlatformBrowser(this.platformId)) {
+      if (window.innerWidth < 992) {
+        this.navbarMobileOpen = false;
+      } else {
+        this.navbarMobileOpen = true;
+        this.mobileMenuOpen = false;
+      }
     }
+
   }
 
-  constructor(private makalelerService: MakalelerService) {}
+  constructor(private makalelerService: MakalelerService, @Inject(PLATFORM_ID) private platformId: any) {}
 
   ngOnInit() {
-
-    if (window.innerWidth < 992) {
-      this.navbarMobileOpen = false;
-    } else {
-      this.navbarMobileOpen = true;
+    if (isPlatformBrowser(this.platformId)) {
+      if (window.innerWidth < 992) {
+        this.navbarMobileOpen = false;
+      } else {
+        this.navbarMobileOpen = true;
+      }
     }
-
+    
     // Get first Articles at first.
     this.makalelerService.getFirstSixArticle()
       .subscribe(res => this.makalelerService.firstSixArticle.next(res['results']) );

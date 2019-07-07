@@ -23,7 +23,7 @@ import { convertHtmlToText } from './convertHtmlToText.pipe';
     convertHtmlToText
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'cezaavukatimid'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule
