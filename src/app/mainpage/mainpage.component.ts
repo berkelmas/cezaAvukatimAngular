@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MakalelerService } from '../makaleler.service';
+import { Title, Meta } from '@angular/platform-browser';
+
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -18,9 +20,12 @@ export class MainpageComponent implements OnInit {
 
   environment: {} = environment;
 
-  constructor(private makalelerService: MakalelerService) {}
+  constructor(private makalelerService: MakalelerService, private titleService: Title, private metaService: Meta) {}
 
   ngOnInit() {
+    this.titleService.setTitle('Ceza Avukatım - Ana Sayfa');
+    this.metaService.updateTag({name: 'description', content: 'Ceza Avukatım, Ceza Hukukunda Hukuki Danışmanlık İçin Kurulmuş Bir Web Sitesidir.'})
+    
     this.makalelerService.firstSixArticle.subscribe(res => this.firstSixArticle = res);
 
     this.makalelerService.firstFourUyusturucumaddesuclari.subscribe(res => this.firstFourUyusturucumaddesuclari = res['results']);
